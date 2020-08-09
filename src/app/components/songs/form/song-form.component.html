@@ -1,0 +1,33 @@
+<div class="stretch-container">
+  <nb-card>
+    <nb-card-header class="text-center">
+      <h1>Subir Canción</h1>
+    </nb-card-header>
+    <nb-card-body>
+
+      <form [formGroup]="songForm" (ngSubmit)="onSubmit(songForm.value)" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label class="label" for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" formControlName="nombre" nbInput fullWidth shape="rectangle" placeholder="Nombre" required [status]="wasSubmitted && !songForm.get('nombre').valid ? 'danger' : 'basic'" />
+        </div>
+
+        <div class="mb-3">
+          <label class="label" for="artista">Artista</label>
+          <input type="text" id="artista" name="artista" formControlName="artista" nbInput fullWidth shape="rectangle" placeholder="Artista" required [status]="wasSubmitted && !songForm.get('artista').valid ? 'danger' : 'basic'" />
+        </div>
+
+        <div class="mb-3">
+          <label class="label" for="album">Album</label>
+          <input type="text" id="album" formControlName="album" name="album" nbInput fullWidth shape="rectangle" placeholder="Album" required [status]="wasSubmitted && !songForm.get('album').valid ? 'danger' : 'basic'" />
+        </div>
+
+        <div class="mb-3">
+          <label class="label" for="enlace">Archivo</label>
+          <input type="file" id="enlace" name="enlace" formControlName="enlace" nbInput fullWidth placeholder="Seleccionar archivo mp3" required [status]="wasSubmitted && !songForm.get('enlace').valid ? 'danger' : 'basic'" accept="audio/mp3" />
+        </div>
+
+        <button type="submit" nbButton status="primary">Subir Canción</button>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>

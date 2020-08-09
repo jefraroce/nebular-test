@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "nebular-test"
+    }
+  },
+  "defaultProject": "nebular-test",
+  "cli": {
+    "analytics": false
+  }
 }

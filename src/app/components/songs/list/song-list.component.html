@@ -1,0 +1,33 @@
+<div class="fit-container">
+  <nb-card>
+    <nb-card-header class="text-center">
+      <h1>Lista de Canciones</h1>
+    </nb-card-header>
+    <nb-card-body>
+      <table class="cdk-table nb-tree-grid">
+        <thead>
+          <tr class="nb-tree-grid-header-row nb-header-row cdk-header-row ng-star-inserted">
+            <th>Nombre</th>
+            <th>Artista</th>
+            <th>Album</th>
+            <th>Enlace</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cancion of canciones">
+            <td>{{ cancion.nombre }}</td>
+            <td>{{ cancion.artista }}</td>
+            <td>{{ cancion.album }}</td>
+            <td>{{ cancion.enlace }}</td>
+            <td>
+              <button nbButton ghost status="success" (click)="play(cancion)"><nb-icon icon="play-circle-outline"></nb-icon></button>
+              <button nbButton ghost status="info" (click)="stop()"><nb-icon icon="stop-circle-outline"></nb-icon></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </nb-card-body>
+  </nb-card>
+</div>
+
